@@ -1,0 +1,19 @@
+$(let sieve $(func (n) (
+    $(if $(leq $n 1) ($(return 0)))
+
+    $(let is_prime $(mul (1) $(add $n 1)))
+
+    $(for i $(range 2 $(add $n 1) 1) (
+        $(if $(not $(get $is_prime $i)) ($(continue)))
+        
+        $(print $i)
+        $(print ' ')
+
+        $(for j $(range $(mul $i 2) $(add $n 1) $i) (
+            $(let is_prime $(set $is_prime $j 0))))
+    ))
+)))
+
+$(let n $(to_int $(input 'Input n = ')))
+$(sieve $n)
+$(print '\n')

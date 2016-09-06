@@ -1,0 +1,12 @@
+$(let sum_to $(func (m) (
+    $(let i 0)
+    $(let s 0)
+    $(while $(leq $i $m) (
+        $(let s $(add $s $i))
+        $(let i $(add $i 1))))
+    $(return $s))))
+
+$(let n $(to_int $(input 'Input n = ')))
+$(print '1 + 2 + ... + n = ')
+$(print $(sum_to $n))
+$(print '\n')

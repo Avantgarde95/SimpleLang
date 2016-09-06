@@ -1,0 +1,21 @@
+$(let sort_list $(func (L) ( # bubble sort
+    $(for i $(range 0 $(sub $(len $L) 1) 1) (
+        $(for j $(range 0 $(sub $(len $L) $(add $i 1)) 1) (
+            $(let a $(get $L $j))
+            $(let b $(get $L $(add $j 1)))
+
+            # if L[j] > L[j+1] -> swap L[j], L[j+1]
+            $(if $(gnq $a $b) (
+                $(let L $(set $(set $L $j $b) $(add $j 1) $a))
+            ))
+        ))
+    ))
+    
+    $(return $L)
+)))
+
+$(let A (1 4 2 6 3 3 -2 7 1 1 1 0))
+$(let A_sorted $(sort_list $A))
+
+$(print 'Sort ') $(print $A)
+$(print '\n-> ') $(print $A_sorted)
