@@ -17,7 +17,7 @@ I used the syntax similar to S-expression used in Scheme-like languages.
 - `Regex [-+]?\d+\.\d+` - `float` object (ex. `34.5`, `-23.40`, `+0.3`)
 - `Regex [a-zA-Z_][a-zA-Z0-9_]*` - `name` object (ex. `myVar`, `_myVar`, `add_numbers`)
 - `'<characters>' or "<characters>"` - `str` object (ex. `'abc\n'`, `"def\n"`)
-(Escape sequences `\n`, `\t`, `\0`, `\r`, `\a`, `\b`, `\'`, `\'"`, `\\` are supported.) 
+(Escape sequences `\n`, `\t`, `\0`, `\r`, `\a`, `\b`, `\'`, `\"`, `\\` are supported.) 
 - `(<expr1> <expr2> ...)` - `list` object (of elements <expr1>, <expr2>, ...)
 - `$<expr>` - An operator called 'evaluator'
   - `$<name>` - Return the value of the variable with such name.
